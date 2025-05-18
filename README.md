@@ -5,6 +5,9 @@
 # Aim: Write and implement Python code that integrates with multiple AI tools to automate the task of interacting with APIs, comparing outputs, and generating actionable insights with Multiple AI Tools
 
 # AI Tools Required:
+* OpenAI GPT-3.5/4 (Text Processing) 
+*  Hugging Face Transformers (Sentiment Analysis)
+* Amazon Warehouse API (Simulated)
 ## 1. Design Philosophy
 Abstraction Layer: Create a unified interface for AI tools.
 
@@ -101,6 +104,31 @@ class LangChainModel(AIModelInterface):
     def generate_response(self, prompt: str) -> str:
         return self.llm(prompt)
 
+```
+## **Execution Steps:**  
+1. Install dependencies:
+   ```bash
+   pip install transformers openai
+   ```
+2. Set OpenAI API key  
+3. Run script:
+   ```bash
+   python warehouse_ai.py
+   ```
+
+---
+
+## **Sample Output:**
+```
+=== Warehouse AI Report ===
+Collision alert in Aisle B3 (NEGATIVE 0.97)
+Battery low on Robot #AX-12 (NEGATIVE 0.89)
+Package sorted in Zone 5 (POSITIVE 0.95)
+
+AI Summary: The system reports two critical alerts (collision and low battery) 
+and one successful package sorting operation.
+
+Recommendation: Immediate maintenance
 ```
 ## Benefits
 * One interface to rule them all.
